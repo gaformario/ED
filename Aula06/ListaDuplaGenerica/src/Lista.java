@@ -31,20 +31,22 @@ public class Lista<T> {
         tamanho++;
     }
 
-    //metodo para impressao
-    public void imprimir (){
+     //metodo para impressao
+     public String imprimir (){
+        String temp = "";
         No<T> aux = inicio;
         while(aux != null) {
-            System.out.println(aux.dado);
+            temp += aux.dado;
             aux = aux.prox;
         }
+        return temp;
     }
 
     //metodo para pesquisa dentro da lista e retornar endereço do objeto
     public No<T> pesquisar(T dado) {
         No<T> aux = inicio;
         while(aux != null) {
-            if(aux.dado == dado) {
+            if(aux.dado.equals(dado)) {
                 return aux;
             }
             aux = aux.prox;
